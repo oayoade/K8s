@@ -1,0 +1,25 @@
+apiVersion: v1
+kind: Service
+metadata:
+  creationTimestamp: "2024-10-11T06:12:39Z"
+  labels:
+    app: mealie
+  name: mealie
+  namespace: mealie
+  
+  
+spec:
+  
+  ipFamilies:
+  - IPv4
+  ipFamilyPolicy: SingleStack
+  ports:
+  - port: 9000
+    protocol: TCP
+    targetPort: 9000
+  selector:
+    app: mealie
+  sessionAffinity: None
+  type: LoadBalancer
+status:
+  loadBalancer: {}
